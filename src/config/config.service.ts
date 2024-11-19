@@ -7,7 +7,7 @@ export class ConfigService {
     private readonly envConfig: { [key: string]: string }
     constructor() {
         const env = process.env.NODE_ENV || 'development'
-        const envFilePath = `${__dirname}/../../.env${env}`
+        const envFilePath = `${__dirname}/../../.env.${env}`
         const existPath = fs.existsSync(envFilePath)
             if (!existPath) {
                 console.log(`.env.${process.env.NODE_ENV} no existe`)
